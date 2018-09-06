@@ -1,4 +1,18 @@
-.title-container{
+.title-container {
   display: flex;
-  margin:10px;
+  margin: 10px;
 }
+
+.title {
+  color: black;
+  font-size: 30px;
+  padding-top: 33px;
+  left: -45px;
+  position: relative;
+}
+
+.img{
+  width: 120px; 
+  height: 90px;
+}
+  
