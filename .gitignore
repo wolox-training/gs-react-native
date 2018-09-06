@@ -1,8 +1,3 @@
+*.css
+*.css.map
 .sass-cache/
-application.css
-application.css.map
-styles.css
-styles.css.map
-equalizer.css
-equalizer.css.map
-
