@@ -1,0 +1,39 @@
+ @import 'color';
+
+ .technoBorder{
+  margin: 11px;
+  display: flex;
+  height: 200px;
+  width: 140px;
+  border-color: $color-green;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+ }
+
+.technoContent {
+  margin: 7px;
+  background: $color-green;
+  height: 200px;
+  width: 140px;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.text{
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  bottom: 60px;
+}
+
+.imgTechno{
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  bottom: 95px;
+  width: 100px;
+  height: 100px;
+}
