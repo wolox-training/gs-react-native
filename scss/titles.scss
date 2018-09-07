@@ -4,10 +4,7 @@
   color: $color-black;
   font-size: 24px; 
   position: relative;
-  left: 90px;
-  top: 60px;
-  z-index: 1;
-  
+  margin: 80px;
 
   &:after {  
   content: url(images/triangle.svg);
@@ -16,8 +13,8 @@
   padding: 10px;
   position: absolute;
   display: inline-block;
-  top: -60px;
-  left: -80px;
+  bottom: 7px;
+  right: 139px;
   z-index: -1;
   }
 }
