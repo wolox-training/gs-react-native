@@ -6,7 +6,7 @@
   position: relative;
   margin: 80px;
 
-  &:before {  
+  &::before {  
   content: url(images/triangle.svg);
   width: 90px;
   height: 60px;
