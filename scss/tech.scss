@@ -5,12 +5,14 @@
   background: $color-green;
   height: 300px;
   width: 175px;
-  padding: 8.5px;
   position: relative;
   border-radius: 5px;
   display: flex;
-  
-  &::before{
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+ 
+  &::before {
   content:"";
   height: 300px;
   bottom: 5px;
@@ -19,22 +21,25 @@
   border: 1px solid $color-green;
   border-radius: 5px;
   position: absolute; 
+  z-index: -1;
   }
 }
 
-.text{
-  text-align: center;
-  flex-direction: row;
-  padding: 5px;
-  margin: 110px 0 0 0;
-  right: 38px;
+.textReact {
+  padding-top:10px;
+  padding-bottom:20px;
 }
 
-.imgTechno{
-  text-align: center;
-  position: absolute;
-  right: 38px;
-  bottom: 187px;
+.textRelease {
+  padding-bottom:20px;
+  font-weight: bold; 
+}
+
+.textComplete {
+  width: 160px;
+}
+
+.img-techno {
   width: 100px;
   height: 100px;
 }
