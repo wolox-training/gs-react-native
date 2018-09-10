@@ -3,35 +3,36 @@
 .technoContent {
   margin: 12px;
   background: $color-green;
-  height: 250px;
+  height: 300px;
   width: 140px;
   position: relative;
   border-radius: 5px;
-  display:flex;
+  display: flex;
   
   &::before{
-    content:"";
-    height: 250px;
-    bottom: 5px;
-    right: 5px;
-    width: 140px;
-    border: 1px solid $color-green;
-    border-radius: 5px;
-    position: absolute; 
+  content:"";
+  height: 300px;
+  bottom: 5px;
+  right: 5px;
+  width: 140px;
+  border: 1px solid $color-green;
+  border-radius: 5px;
+  position: absolute; 
   }
 }
 
 .text{
-  text-align: left;
-  flex-direction:column;
+  text-align: center;
+  flex-direction: row;
   padding: 5px;
+  margin: 110px 0 0 0;
 }
 
 .imgTechno{
   text-align: center;
   position: absolute;
   right: 21px;
-  bottom: 145px;
+  bottom: 195px;
   width: 100px;
   height: 100px;
 }
