@@ -13,7 +13,7 @@
   align-items: center;
  
   &::before {
-  content:"";
+  content: "";
   height: 300px;
   bottom: 5px;
   right: 5px;
@@ -26,12 +26,12 @@
 }
 
 .textReact {
-  padding-top:10px;
-  padding-bottom:20px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .textRelease {
-  padding-bottom:20px;
+  padding-bottom: 20px;
   font-weight: bold; 
 }
 
