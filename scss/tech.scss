@@ -13,29 +13,29 @@
   align-items: center;
  
   &::before {
-  content: "";
-  height: 300px;
-  bottom: 5px;
-  right: 5px;
-  width: 175px;
-  border: 1px solid $color-green;
-  border-radius: 5px;
-  position: absolute; 
-  z-index: -1;
+    content: "";
+    height: 300px;
+    bottom: 5px;
+    right: 5px;
+    width: 175px;
+    border: 1px solid $color-green;
+    border-radius: 5px;
+    position: absolute; 
+    z-index: -1;
   }
 }
 
-.textReact {
+.text-react {
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
-.textRelease {
+.text-release {
   padding-bottom: 20px;
   font-weight: bold; 
 }
 
-.textComplete {
+.text-complete {
   width: 160px;
 }
 
