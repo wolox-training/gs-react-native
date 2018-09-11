@@ -6,19 +6,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-bottom:300px;
+  margin-bottom: 300px;
 }
 
-.text-changes{
-font-size: 15px;
+.text-changes {
+  font-size: 15px;
 }
 
-.text-wolox{
+.text-wolox {
   font-size: 50px;
 }
 
-.text-copyright{
-  margin-left:900px;
+.text-copyright {
   font-size: 10px;
+  padding: 5px;
+  align-self: flex-end;
 }
