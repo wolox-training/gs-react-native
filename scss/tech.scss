@@ -35,6 +35,14 @@
   }
 }
 
+.techno-content:hover:before {
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  transition: top 2s ease-out;
+  transition: left 2s ease-out;
+}
+
 .tech-text {
   padding-top: 10px;
   padding-bottom: 20px;
