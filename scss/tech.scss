@@ -1,15 +1,14 @@
  @import 'color';
 
- .body{
+.body {
   margin: 30px;
+}
 
- }
-
- .container-technologies{
-  margin: 0 0 0 60px;
+.container-technologies { 
+  margin-left: 60px;
   display: flex;
   flex-wrap: wrap;
- }
+}
 
 .techno-content {
   margin: 0 0 30px 30px ;
