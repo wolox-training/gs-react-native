@@ -33,14 +33,13 @@
     position: absolute; 
     z-index: -1;
   }
-}
 
-.techno-content:hover:before {
-  top: 10px;
-  left: 10px;
-  cursor: pointer;
-  transition: top 2s ease-out;
-  transition: left 2s ease-out;
+  &:hover:before {
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    transition: top left 2s ease-out;
+  }
 }
 
 .tech-text {
