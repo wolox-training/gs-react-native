@@ -1,0 +1,21 @@
+@import 'color';
+
+.navbar {
+  position: fixed;
+  background: $color-white;
+  height: 100px;
+  width: 90%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.image-navbar {
+  width: 120px;
+  height: 90px;
+}
+
+.title-navbar{
+  font-size: 30px;
+}
