@@ -1,3 +1,24 @@
-.footer{
-  display:flex;
+@import 'color';
+
+.footer {
+  width: 100%;
+  background: $color-lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom:300px;
+}
+
+.text-changes{
+font-size: 15px;
+}
+
+.text-wolox{
+  font-size: 50px;
+}
+
+.text-copyright{
+  margin-left:900px;
+  font-size: 10px;
 }
