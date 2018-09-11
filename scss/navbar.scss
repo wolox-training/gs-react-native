@@ -3,8 +3,8 @@
 .navbar {
   position: fixed;
   background: $color-white;
-  height: 100px;
-  width: 90%;
+  
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,5 +17,6 @@
 }
 
 .title-navbar {
+  margin-right: 50px;
   font-size: 30px;
 }
