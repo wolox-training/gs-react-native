@@ -1,14 +1,14 @@
  @import 'color';
 
-
 .central-container {
   margin: 0 30px 30px;
 }
 
 .container-technologies { 
   margin-left: 60px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 200px auto 50px 40px;
+  grid-template-rows: 200px;
 }
 
 .techno-content {
