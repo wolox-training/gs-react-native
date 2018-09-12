@@ -7,12 +7,14 @@
 .container-technologies { 
   margin-left: 60px;
   display: grid;
-  
+  grid-template-columns: 210px 220px 220px;
+  grid-template-rows: 200px 200px 200px;
+  grid-auto-flow: column;
 }
 
 .techno-content {
   margin: 0 0 30px 30px;
-  background: $color-green;
+  background: $color-white;
   height: 300px;
   width: 175px;
   position: relative;
@@ -21,25 +23,9 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
- 
-  &::before {
-    content: "";
-    height: 300px;
-    bottom: 5px;
-    right: 5px;
-    width: 175px;
-    border: 1px solid $color-green;
-    border-radius: 5px;
-    position: absolute; 
-    z-index: -1;
-  }
-
-  &:hover::before {
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    transition: top left 2s ease-out;
-  }
+  grid-column: 1;
+  grid-row-start: 2;
+  align-self: center;
 }
 
 .tech-text {
