@@ -6,9 +6,8 @@
 
 .container-technologies { 
   margin-left: 60px;
-  display: grid;
-  grid-template-columns: 200px auto 50px 40px;
-  grid-template-rows: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .techno-content {
