@@ -18,7 +18,6 @@
   height: 300px;
   width: 300px;
   position: relative;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -46,7 +45,6 @@
 }
 
 .techno-content {
-  padding-top: 150px;
   height: 100%;
   grid-column: 1;
   grid-row: 1/3;
@@ -55,8 +53,20 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 1024px) {
-  .ontainer-technologies{
+.grid-content {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .container-technologies {
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .techno-content {
+    border-right-color: $color-white;
+  }
+  .grid-content {
+    border-top: 2px solid $color-green;
   }
 }
