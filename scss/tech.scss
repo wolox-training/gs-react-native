@@ -59,8 +59,10 @@
 
 @media (max-width: 1024px) {
   .container-technologies {
+    margin-left: 0;
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
   }
 
   .techno-content {
