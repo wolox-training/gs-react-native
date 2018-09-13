@@ -62,9 +62,11 @@
     display: grid;
     grid-template-columns: 1fr;
   }
+
   .techno-content {
     border-right-color: $color-white;
   }
+  
   .grid-content {
     border-top: 2px solid $color-green;
   }
