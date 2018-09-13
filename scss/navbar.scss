@@ -22,3 +22,13 @@
   margin-right: 50px;
   font-size: 30px;
 }
+
+@media (max-width: 1024px) {
+  .title-navbar {
+    color: $color-white;
+  }
+
+  .image-navbar{
+    height: auto;
+  }
+}

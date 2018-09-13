@@ -20,3 +20,14 @@
   align-self: flex-end;
   color: $color-white;
 }
+
+@media (max-width: 1024px) {
+  .text-copyright {
+    align-self: center;
+  }
+
+  .img-footer {
+    max-width: 300px; 
+    max-height: 300px;
+  }
+}
