@@ -18,7 +18,6 @@
   height: 300px;
   width: 300px;
   position: relative;
-  border-radius: 5px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -52,4 +51,25 @@
   border-right: 2px solid $color-green;
   display: flex;
   justify-content: center;
+}
+
+.grid-content {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .container-technologies {
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .techno-content {
+    border-right: 0;
+  }
+  
+  .grid-content {
+    border-top: 2px solid $color-green;
+  }
 }

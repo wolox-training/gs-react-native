@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .text-changes {
@@ -19,4 +18,14 @@
   padding: 5px;
   align-self: flex-end;
   color: $color-white;
+}
+
+@media (max-width: 1024px) {
+  .text-copyright {
+    align-self: center;
+  }
+
+  .img-footer {
+    max-width: 300px;
+  }
 }
