@@ -6,40 +6,24 @@
 
 .container-technologies { 
   margin-left: 60px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
 }
 
-.techno-content {
+.techno-content,
+.grid-content {
   margin: 0 0 30px 30px;
-  background: $color-green;
+  background: $color-white;
   height: 300px;
-  width: 175px;
+  width: 300px;
   position: relative;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
- 
-  &::before {
-    content: "";
-    height: 300px;
-    bottom: 5px;
-    right: 5px;
-    width: 175px;
-    border: 1px solid $color-green;
-    border-radius: 5px;
-    position: absolute; 
-    z-index: -1;
-  }
-
-  &:hover::before {
-    top: 10px;
-    left: 10px;
-    cursor: pointer;
-    transition: top left 2s ease-out;
-  }
+  align-self: center;
 }
 
 .tech-text {
@@ -59,4 +43,13 @@
 .img-techno {
   margin-top: 10px;
   max-height: 50px;
+}
+
+.techno-content {
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1/3;
+  border-right: 2px solid $color-green;
+  display: flex;
+  justify-content: center;
 }
