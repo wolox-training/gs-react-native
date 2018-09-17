@@ -1,7 +1,7 @@
 import { min, copy, reverseMerge, filterAttribs } from '.';
 
 describe('Spread operator', () => {
-  xit('min returns the param if is the only argument', () => {
+  it('min returns the param if is the only argument', () => {
     expect(min(1)).toBe(1);
     expect(min(2)).toBe(2);
   });
@@ -43,11 +43,14 @@ describe('Spread operator', () => {
     expect(reverseMerge([1, 1, 1], [3, 2])).toEqual([3, 2, 1, 1, 1]);
     expect(reverseMerge([1, 2], [3, 4, 5])).toEqual([3, 4, 5, 1, 2]);
   });
-  xit('filterAttribs filters \'a\' and \'b\' by default', () => {
+  xit("filterAttribs filters 'a' and 'b' by default", () => {
     expect(filterAttribs({ a: 1, b: 2, c: 3 })).toEqual({ c: 3 });
     expect(filterAttribs({ b: 1, a: 2, c: 3 })).toEqual({ c: 3 });
     expect(filterAttribs({
-      b: 1, d: 2, c: 3, e: 1
+      b: 1,
+      d: 2,
+      c: 3,
+      e: 1
     })).toEqual({ c: 3, d: 2, e: 1 });
   });
 });
