@@ -17,4 +17,11 @@ export function min(...numbers) {
   return undefined;
 }
 
-export function copy() {}
+export function copy(numbers) {
+  if (isArray(numbers)) {
+    const arrayRetorno = numbers;
+    return arrayRetorno;
+  }
+  const retorno = { a: Object.values(numbers)[0], b: Object.values(numbers)[1] };
+  return retorno;
+}
