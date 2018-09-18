@@ -38,3 +38,17 @@ function clone(obj) {
 
   return temp;
 }
+
+export function reverseMerge(arrayOne, arrayTwo) {
+  for (let i = 0; i < arrayOne.length; i++) {
+    arrayTwo.push(arrayOne[i]);
+  }
+  const arrayRetorno = copy(arrayTwo);
+  return arrayRetorno;
+}
+
+export function filterAttribs(object) {
+  delete object.a;
+  delete object.b;
+  return object;
+}
