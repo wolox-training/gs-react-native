@@ -3,9 +3,14 @@
 export function delay(time) {
   const wait = ms =>
     new Promise((resolve, reject) => {
+      if (time === time * time) {
+        reject(time);
+      }
       resolve(time);
     });
   return wait();
 }
 
-export function asyncDelay() {}
+export function asyncDelay(time) {
+  return delay(time);
+}
