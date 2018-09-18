@@ -19,9 +19,22 @@ export function min(...numbers) {
 
 export function copy(numbers) {
   if (isArray(numbers)) {
-    const arrayRetorno = numbers;
+    const arrayRetorno = numbers.slice();
     return arrayRetorno;
   }
-  const retorno = { a: Object.values(numbers)[0], b: Object.values(numbers)[1] };
+  const retorno = clone(numbers);
   return retorno;
+}
+
+function clone(obj) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+
+  const temp = obj.constructor();
+  for (const key in obj) {
+    temp[key] = clone(obj[key]);
+  }
+
+  return temp;
 }
