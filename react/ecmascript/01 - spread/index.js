@@ -5,50 +5,26 @@ export function min(...numbers) {
     if (isArray(numbers[0])) {
       return Math.min(...numbers[0]);
     }
-    if (numbers.length === 1) {
-      return Math.min(numbers);
-    }
-    const array = [];
-    for (let i = 0; i < numbers.length; i++) {
-      array.push(numbers[i]);
-    }
-    return Math.min(...array);
+    return Math.min(...numbers);
   }
   return undefined;
 }
 
 export function copy(numbers) {
   if (isArray(numbers)) {
-    const arrayRetorno = numbers.slice();
+    const arrayRetorno = [...numbers];
     return arrayRetorno;
   }
-  const retorno = clone(numbers);
-  return retorno;
+  const returnObject = { ...numbers };
+
+  return returnObject;
 }
 
-function clone(obj) {
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-
-  const temp = obj.constructor();
-  for (const key in obj) {
-    temp[key] = clone(obj[key]);
-  }
-
-  return temp;
+export function reverseMerge(arraysOne, arrayTwo) {
+  const arrayReturn = [...arrayTwo, ...arraysOne];
+  return arrayReturn;
 }
 
-export function reverseMerge(arrayOne, arrayTwo) {
-  for (let i = 0; i < arrayOne.length; i++) {
-    arrayTwo.push(arrayOne[i]);
-  }
-  const arrayRetorno = copy(arrayTwo);
-  return arrayRetorno;
-}
-
-export function filterAttribs(object) {
-  delete object.a;
-  delete object.b;
-  return object;
+export function filterAttribs({ a, b, ...rest }) {
+  return rest;
 }

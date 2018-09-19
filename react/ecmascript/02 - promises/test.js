@@ -8,7 +8,7 @@ describe('Promises', () => {
       expect(delayedTime).toBeGreaterThanOrEqual(TIME - 100);
       expect(delayedTime).toBeLessThanOrEqual(TIME + 100);
     }));
-
+  jest.setTimeout(6000); // configuration of Timeout for run test
   it('delay will not wait if the time is too long', () =>
     delay(TIME * TIME).catch(e => expect(e).toEqual(Error('This time is too much !'))));
 
