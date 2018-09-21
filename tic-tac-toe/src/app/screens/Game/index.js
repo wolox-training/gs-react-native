@@ -10,7 +10,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board />
         </div>
-        <div className="game-info">
+        <div className={styles.gameInfo}>
           <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
