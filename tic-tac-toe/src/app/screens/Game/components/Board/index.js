@@ -5,15 +5,13 @@ import styles from './styles.scss';
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
   }
 
   render() {
-    const status = 'Next player: X';
-
     return (
       <div>
-        <div className={styles.status}>{status}</div>
+        {/* <div className={styles.status}>{status}</div> */}
         <div className={styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
