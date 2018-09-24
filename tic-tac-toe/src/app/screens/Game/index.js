@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Board from './components/Board';
 import styles from './styles.scss';
@@ -13,7 +13,7 @@ function calculateWinner(squares) {
 
   return null;
 }
-class Game extends React.Component {
+class Game extends Component {
   state = {
     history: [
       {
