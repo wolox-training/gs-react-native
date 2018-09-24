@@ -61,10 +61,9 @@ class Game extends React.Component {
     }
 
     return (
-      <div>
-        <div className={styles.game}> {status}</div>
+      <React.Fragment>
         <div className={styles.game}>
-          <div className="game-board">
+          <div className={styles.gameBoard}>
             <Board squares={current.squares} onClick={i => this.handleClick(i)} />
           </div>
           <div className={styles.gameInfo}>
@@ -72,7 +71,7 @@ class Game extends React.Component {
             <ol>{moves}</ol>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
