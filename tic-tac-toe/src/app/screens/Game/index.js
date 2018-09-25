@@ -10,7 +10,6 @@ function calculateWinner(squares) {
       return squares[a];
     }
   });
-
   return null;
 }
 class Game extends Component {
