@@ -10,6 +10,7 @@ class Board extends Component {
   }
 
   render() {
+    
     return (
       <Fragment>
         <div className={styles.boardRow}>
