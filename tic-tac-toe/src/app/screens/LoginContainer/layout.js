@@ -6,6 +6,7 @@ import { CustomInput } from '../../components/CustomInput';
 class Login extends Component {
   render() {
     const { handleSubmit } = this.props;
+
     return (
       <form onSubmit={handleSubmit}>
         <Field name="user" component={CustomInput} type="text" label="usuario: " />
