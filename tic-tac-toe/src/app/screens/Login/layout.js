@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import { CustomInput } from '../../components/CustomInput';
+import { textInput } from '../../components/textInput';
+
+import { FIELDS, FORM_NAME } from './fields';
 
 class Login extends Component {
   render() {
@@ -9,8 +11,8 @@ class Login extends Component {
 
     return (
       <form onSubmit={handleSubmit}>
-        <Field name="user" component={CustomInput} type="text" label="usuario: " />
-        <Field name="pass" component={CustomInput} type="password" label="contraseña: " />
+        <Field name={FIELDS.user} component={textInput} label="usuario: " />
+        <Field name={FIELDS.pass} component={textInput} label="contraseña: " />
         <button type="submit"> Submit</button>
       </form>
     );
@@ -18,5 +20,5 @@ class Login extends Component {
 }
 
 export default reduxForm({
-  form: 'login'
+  form: FORM_NAME
 })(Login);
