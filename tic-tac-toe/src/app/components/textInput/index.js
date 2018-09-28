@@ -4,7 +4,7 @@ const TextInput = props => {
   const { label, input, type, meta } = props;
   return (
     <Fragment>
-      <label htmlFor="label">{label}</label>
+      <label htmlFor={input.name}>{label}</label>
       <input {...input} type={type} />
       {meta.error && meta.touched && <div style={{ color: 'red' }}>{meta.error}</div>}
     </Fragment>
