@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { obtainUser } from '../../actionCreator/index';
 
 import Login from './layout';
 
 class LoginContainer extends Component {
-  submit = values => alert(JSON.stringify(values));
+  // aca deberiamos hacer el llamado al servicio
+  submit = values => props.obtainUser(values);
 
   render() {
     return <Login onSubmit={this.submit} />;
   }
 }
-
-export default LoginContainer;
+const mapDispatchToProp = dispatch => ({
+  obtainUser(values) {
+    dispatch(obtainUser(values));
+  }
+});
+export default connect(mapDispatchToProp)(LoginContainer);

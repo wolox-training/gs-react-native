@@ -7,7 +7,7 @@ export const validate = values => {
   }
 
   if (!values.pass) {
-    errors.user = 'password no valida';
+    errors.pass = 'password no valida';
   }
 
   return errors;
