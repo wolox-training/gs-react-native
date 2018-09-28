@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-export const textInput = props => {
+const TextInput = props => {
   const { label, input, type, meta } = props;
   return (
     <Fragment>
@@ -10,3 +10,5 @@ export const textInput = props => {
     </Fragment>
   );
 };
+
+export default TextInput;
