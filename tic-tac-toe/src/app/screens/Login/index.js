@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { obtainUser } from '../../../redux/auth/actions';
+import { actionsCreators } from '../../../redux/auth/actions';
 
 import Login from './layout';
 
@@ -15,7 +15,7 @@ class LoginContainer extends Component {
 }
 const mapDispatchToProps = dispatch => ({
   login: values => {
-    dispatch(obtainUser(values));
+    dispatch(actionsCreators.login());
   }
 });
 export default connect(
