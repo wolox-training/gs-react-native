@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Game from './layout';
 
@@ -73,4 +74,5 @@ class GameContainer extends Component {
   }
 }
 
-export default GameContainer;
+// export default GameContainer;
+export default connect(null)(GameContainer);
