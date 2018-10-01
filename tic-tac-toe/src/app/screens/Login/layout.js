@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import { textInput } from '../../components/textInput';
+import { textInput } from '../../components/TextInput';
 import { validate } from '../../validation';
 
 import { FIELDS, FORM_NAME } from './fields';
