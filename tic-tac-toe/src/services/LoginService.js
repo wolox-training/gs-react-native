@@ -1,6 +1,5 @@
 import api from '../config/api';
 
 export default {
-  getUserDetail: user => api.post('/api/login', { email: user.user, password: user.pass }),
-  setToker: token => api.setHeader(('Authorization', token))
+  getUserDetail: user => api.post('/api/login', { email: user.user, password: user.pass })
 };

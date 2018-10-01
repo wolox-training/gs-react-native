@@ -1,6 +1,6 @@
 import AuthService from '../../services/LoginService';
 
-const actions = {
+export const actions = {
   VALIDATE_USER: 'VALIDATE_USER',
   VALIDATE_USER_SUCCESS: 'VALIDATE_USER_SUCCESS',
   VALIDATE_USER_FAILED: 'VALIDATE_USER_FAILED'
@@ -11,8 +11,7 @@ export const actionsCreators = {
     dispatch({ type: actions.VALIDATE_USER });
     const response = await AuthService.getUserDetail(values);
     if (response.ok) {
-      console.log(response.data);
-      dispatch({ type: actions.VALIDATE_USER_SUCCESS });
+      dispatch({ type: actions.VALIDATE_USER_SUCCESS, token: response.data, email: values.user });
     } else {
       alert('Salio mal');
       dispatch({ type: actions.VALIDATE_USER_FAILED });
