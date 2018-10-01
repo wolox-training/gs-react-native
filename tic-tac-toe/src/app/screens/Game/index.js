@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-import Board from './components/Board';
-import styles from './styles.scss';
+import Game from './layout';
 
 function calculateWinner(squares) {
   const lines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
+  let winner = null;
   lines.forEach(([a, b, c]) => {
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      winner = squares[a];
     }
   });
-  return null;
+  return winner;
 }
-class Game extends Component {
+class GameContainer extends Component {
   state = {
     history: [
       {
@@ -23,7 +23,7 @@ class Game extends Component {
     xIsNext: true
   };
 
-  handleClick(i) {
+  handleClick = i => {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
@@ -40,7 +40,7 @@ class Game extends Component {
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext
     });
-  }
+  };
   jumpTo(step) {
     this.setState({
       stepNumber: step,
@@ -69,18 +69,8 @@ class Game extends Component {
       status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
     }
 
-    return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board squares={current.squares} onClick={i => this.handleClick(i)} />
-        </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <ol>{moves}</ol>
-        </div>
-      </div>
-    );
+    return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
 
-export default Game;
+export default GameContainer;
