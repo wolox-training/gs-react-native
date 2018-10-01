@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 
-import { textInput } from '../../components/TextInput';
+import TextInput from '../../components/TextInput';
 import { validate } from '../../validation';
 
 import { FIELDS, FORM_NAME } from './fields';
@@ -11,13 +12,17 @@ class Login extends Component {
     const { handleSubmit } = this.props;
     return (
       <form onSubmit={handleSubmit}>
-        <Field name={FIELDS.user} component={textInput} label="usuario: " />
-        <Field name={FIELDS.pass} component={textInput} label="contraseña: " />
+        <Field name={FIELDS.user} component={TextInput} label="user " />
+        <Field name={FIELDS.pass} component={TextInput} label="pass " />
         <button type="submit"> Submit</button>
       </form>
     );
   }
 }
+
+Login.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
 
 export default reduxForm({
   form: FORM_NAME,
