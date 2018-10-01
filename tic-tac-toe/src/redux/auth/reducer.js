@@ -6,7 +6,7 @@ export default function reducer1(state = 0, action) {
       break;
 
     case actions.VALIDATE_USER_SUCCESS:
-      state = { email: action.email, token: action.token };
+      state = { auth: { email: action.email, token: action.token } };
       break;
 
     case actions.VALIDATE_USER_FAILED:
