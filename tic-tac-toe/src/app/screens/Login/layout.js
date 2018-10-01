@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 
 import TextInput from '../../components/TextInput';
 import { validate } from '../../validation';
@@ -19,6 +20,10 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
 
 export default reduxForm({
   form: FORM_NAME,
