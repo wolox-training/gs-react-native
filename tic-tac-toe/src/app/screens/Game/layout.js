@@ -18,7 +18,7 @@ function Game({ squares, status, moves, onClick }) {
   );
 }
 Game.propTypes = {
-  moves: PropTypes.arrayOf(PropTypes.object).isRequired,
+  moves: PropTypes.arrayOf(PropTypes.node).isRequired,
   squares: PropTypes.arrayOf(PropTypes.string),
   status: PropTypes.string,
   onClick: PropTypes.func.isRequired

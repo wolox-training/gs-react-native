@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 const TextInput = ({ label, input, type, meta }) => (
   <Fragment>
@@ -7,5 +8,12 @@ const TextInput = ({ label, input, type, meta }) => (
     {meta.error && meta.touched && <div style={{ color: 'red' }}>{meta.error}</div>}
   </Fragment>
 );
+
+TextInput.propTypes = {
+  type: PropTypes.string,
+  input: PropTypes.object.isRequired,
+  label: PropTypes.string,
+  meta: PropTypes.object.isRequired
+};
 
 export default TextInput;
