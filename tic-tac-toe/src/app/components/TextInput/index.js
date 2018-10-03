@@ -10,7 +10,6 @@ const TextInput = ({ label, input, meta }) => (
 );
 
 TextInput.propTypes = {
-  type: PropTypes.string,
   input: PropTypes.instanceOf(Object),
   label: PropTypes.string,
   meta: PropTypes.instanceOf(Object)
