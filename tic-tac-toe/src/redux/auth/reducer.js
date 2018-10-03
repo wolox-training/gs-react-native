@@ -1,17 +1,25 @@
 import { actions } from './actions.js';
 
-export default function reducer1(state = 0, action) {
+const initialState = {
+  email: null,
+  token: null
+};
+
+export default function auth(state = initialState, action) {
   switch (action.type) {
     case actions.VALIDATE_USER:
-      break;
+      return state;
 
     case actions.VALIDATE_USER_SUCCESS:
-      state = { auth: { email: action.email, token: action.token } };
-      break;
+      return {
+        ...state,
+        email: action.payload.email,
+        token: action.payload.token
+      };
 
     case actions.VALIDATE_USER_FAILED:
-      break;
+      return state;
+    default:
+      return state;
   }
-
-  return state;
 }
