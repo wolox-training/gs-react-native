@@ -1,10 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
 import { Switch } from 'react-router';
 
-import GameContainer from './app/screens/Game/index';
+import GameContainer from './app/screens/Game/';
 
 import './scss/index.scss';
 import store, { history } from './redux/store';
@@ -13,12 +13,12 @@ import Login from './app/screens/Login';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Switch>
-        <Route path="/" component={Login} />
-        <Route path="Game" component={GameContainer} />
+        <Route path="/" exact component={Login} />
+        <Route path="/game" component={GameContainer} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

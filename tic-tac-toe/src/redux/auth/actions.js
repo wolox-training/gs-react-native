@@ -18,7 +18,7 @@ export const actionsCreators = {
         type: actions.LOG_IN_USER_SUCCESS,
         payload: { token: response.data, email: values.user }
       });
-      store.dispatch(push('/Game'));
+      store.dispatch(push('/game'));
     } else {
       alert('Salio mal');
       dispatch({ type: actions.LOG_IN_USER_FAILED });
