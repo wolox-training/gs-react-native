@@ -6,6 +6,9 @@ export const validate = values => {
       errors.user = 'usuario no valido';
     }
   }
+  if (values.user === undefined) {
+    errors.user = 'usuario no valido';
+  }
 
   if (!values.pass) {
     errors.pass = 'password no valida';
