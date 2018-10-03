@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
 import TextInput from '../../components/TextInput';
-import { validate } from '../../validation';
+import { validate } from '../../validation/loginValidation';
 
 import { FIELDS, FORM_NAME } from './fields';
 
