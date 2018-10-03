@@ -14,44 +14,34 @@ function calculateWinner(squares) {
   return winner;
 }
 class GameContainer extends Component {
-  state = {
-    history: [
-      {
-        squares: Array(9).fill(null)
-      }
-    ],
-    stepNumber: 0,
-    xIsNext: true
-  };
-
   handleClick = i => {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
+    squares[i] = this.props.xIsNext ? 'X' : 'O';
+    setState({
       history: history.concat([
         {
           squares
         }
       ]),
       stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
+      xIsNext: !this.props.xIsNext
     });
   };
   jumpTo(step) {
-    this.setState({
+    setState({
       stepNumber: step,
       xIsNext: step % 2 === 0
     });
   }
 
   render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const history = this.props.history;
+    const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
@@ -67,12 +57,20 @@ class GameContainer extends Component {
     if (winner) {
       status = `Winner: ${winner}`;
     } else {
-      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+      status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
 
     return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
-
+const mapStateToProps = state => ({
+  history: [
+    {
+      squares: Array(9).fill(null)
+    }
+  ],
+  stepNumber: 0,
+  xIsNext: true
+});
 // export default GameContainer;
-export default connect(null)(GameContainer);
+export default connect(mapStateToProps)(GameContainer);
