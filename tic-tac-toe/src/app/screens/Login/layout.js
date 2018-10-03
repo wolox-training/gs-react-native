@@ -10,7 +10,6 @@ import { FIELDS, FORM_NAME } from './fields';
 class Login extends Component {
   render() {
     const { handleSubmit } = this.props;
-
     return (
       <form onSubmit={handleSubmit}>
         <Field name={FIELDS.user} component={TextInput} label="user " />

@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { actionsCreators } from '../../../redux/auth/actions';
 
 import Login from './layout';
 
 class LoginContainer extends Component {
-  submit = values => alert(JSON.stringify(values));
+  submit = values => this.props.login(values);
 
   render() {
     return <Login onSubmit={this.submit} />;
   }
 }
 
-export default LoginContainer;
+LoginContainer.propTypes = {
+  login: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = dispatch => ({
+  login: values => {
+    dispatch(actionsCreators.login(values));
+  }
+});
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginContainer);
