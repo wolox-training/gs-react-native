@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { actionsCreators } from '../../../redux/auth/actions';
 
 import Login from './layout';
 
 class LoginContainer extends Component {
-  // aca deberiamos hacer el llamado al servicio
   submit = values => this.props.login(values);
 
   render() {
     return <Login onSubmit={this.submit} />;
   }
 }
+
+LoginContainer.propTypes = {
+  login: PropTypes.func.isRequired
+};
+
 const mapDispatchToProps = dispatch => ({
   login: values => {
     dispatch(actionsCreators.login(values));
