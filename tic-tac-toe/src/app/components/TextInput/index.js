@@ -1,19 +1,19 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-const TextInput = ({ label, input, type, meta }) => (
+const TextInput = ({ label, input, meta }) => (
   <Fragment>
     <label htmlFor={input.name}>{label}</label>
-    <input {...input} type={type} />
-    {meta.error && meta.touched && <div style={{ color: 'red' }}>{meta.error}</div>}
+    <input {...input} type="text" />
+    {meta.error && <div style={{ color: 'red' }}>{meta.error}</div>}
   </Fragment>
 );
 
 TextInput.propTypes = {
   type: PropTypes.string,
-  input: PropTypes.object.isRequired,
+  input: PropTypes.instanceOf(Object),
   label: PropTypes.string,
-  meta: PropTypes.object.isRequired
+  meta: PropTypes.instanceOf(Object)
 };
 
 export default TextInput;
