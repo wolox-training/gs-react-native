@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 
 import Game from './app/screens/Game';
 
@@ -10,8 +9,6 @@ import './scss/index.scss';
 import store from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
 import Login from './app/screens/Login';
-
-const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
