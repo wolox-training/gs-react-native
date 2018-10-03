@@ -1,4 +1,7 @@
+import { push } from 'react-router-redux';
+
 import AuthService from '../../services/LoginService';
+import store from '../store';
 
 export const actions = {
   LOG_IN_USER: 'VALIDATE_USER',
@@ -15,6 +18,7 @@ export const actionsCreators = {
         type: actions.VALIDATE_USER_SUCCESS,
         payload: { token: response.data, email: values.user }
       });
+      store.dispatch(push('/Game'));
     } else {
       alert('Salio mal');
       dispatch({ type: actions.VALIDATE_USER_FAILED });
