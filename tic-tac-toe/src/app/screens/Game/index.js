@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { actionsCreators } from '../../../redux/Game/actions';
+import store from '../../../redux/store';
 
 import Game from './layout';
 
@@ -22,7 +26,7 @@ class GameContainer extends Component {
       return;
     }
     squares[i] = this.props.xIsNext ? 'X' : 'O';
-    setState({
+    const state = {
       history: history.concat([
         {
           squares
@@ -30,17 +34,19 @@ class GameContainer extends Component {
       ]),
       stepNumber: history.length,
       xIsNext: !this.props.xIsNext
-    });
+    };
+
+    this.props.clickSquare(state);
   };
   jumpTo(step) {
-    setState({
+    this.props.makeMove({
       stepNumber: step,
       xIsNext: step % 2 === 0
     });
   }
 
   render() {
-    const history = this.props.history;
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
     const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
 
@@ -63,14 +69,28 @@ class GameContainer extends Component {
     return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
-const mapStateToProps = state => ({
-  history: [
-    {
-      squares: Array(9).fill(null)
-    }
-  ],
-  stepNumber: 0,
-  xIsNext: true
+const mapStateToProps = store => ({
+  history: store.game.history,
+  stepNumber: store.game.stepNumber,
+  xIsNext: store.game.xIsNext
 });
-// export default GameContainer;
-export default connect(mapStateToProps)(GameContainer);
+
+const mapDispatchToProps = dispatch => ({
+  clickSquare: values => {
+    dispatch(actionsCreators.clickSquare(values));
+  },
+  makeMove: values => {
+    dispatch(actionsCreators.makeMove(values));
+  }
+});
+
+GameContainer.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.object),
+  stepNumber: PropTypes.number,
+  xIsNext: PropTypes.bool,
+  clickSquare: PropTypes.func.isRequired
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameContainer);
