@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { actionsCreators } from '../../../redux/Game/actions';
-import store from '../../../redux/store';
 
 import Game from './layout';
 
@@ -88,7 +87,8 @@ GameContainer.propTypes = {
   history: PropTypes.arrayOf(PropTypes.object),
   stepNumber: PropTypes.number,
   xIsNext: PropTypes.bool,
-  clickSquare: PropTypes.func.isRequired
+  clickSquare: PropTypes.func.isRequired,
+  makeMove: PropTypes.func.isRequired
 };
 export default connect(
   mapStateToProps,
