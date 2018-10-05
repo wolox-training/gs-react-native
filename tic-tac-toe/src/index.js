@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import './scss/index.scss';
 import store from './redux/store';
 import registerServiceWorker from './registerServiceWorker';
-import Login from './app/screens/Login';
+import Game from './app/screens/Game';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Login />
+    <Game />
   </Provider>,
   document.getElementById('root')
 );
