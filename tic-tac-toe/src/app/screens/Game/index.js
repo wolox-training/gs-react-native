@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { actionsCreators } from '../../../redux/Game/actions';
 
 import Game from './layout';
 
@@ -13,44 +17,23 @@ function calculateWinner(squares) {
   return winner;
 }
 class GameContainer extends Component {
-  state = {
-    history: [
-      {
-        squares: Array(9).fill(null)
-      }
-    ],
-    stepNumber: 0,
-    xIsNext: true
-  };
-
   handleClick = i => {
-    const history = this.state.history.slice(0, this.state.stepNumber + 1);
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
-    this.setState({
-      history: history.concat([
-        {
-          squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.state.xIsNext
-    });
+
+    this.props.clickSquare(i);
   };
   jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: step % 2 === 0
-    });
+    this.props.makeMove(step);
   }
 
   render() {
-    const history = this.state.history;
-    const current = history[this.state.stepNumber];
+    const history = this.props.history.slice(0, this.props.stepNumber + 1);
+    const current = history[this.props.stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
@@ -66,11 +49,35 @@ class GameContainer extends Component {
     if (winner) {
       status = `Winner: ${winner}`;
     } else {
-      status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+      status = `Next player: ${this.props.xIsNext ? 'X' : 'O'}`;
     }
 
     return <Game squares={current.squares} status={status} moves={moves} onClick={this.handleClick} />;
   }
 }
+const mapStateToProps = store => ({
+  history: store.game.history,
+  stepNumber: store.game.stepNumber,
+  xIsNext: store.game.xIsNext
+});
 
-export default GameContainer;
+const mapDispatchToProps = dispatch => ({
+  clickSquare: values => {
+    dispatch(actionsCreators.clickSquare(values));
+  },
+  makeMove: values => {
+    dispatch(actionsCreators.makeMove(values));
+  }
+});
+
+GameContainer.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.object),
+  stepNumber: PropTypes.number,
+  xIsNext: PropTypes.bool,
+  clickSquare: PropTypes.func.isRequired,
+  makeMove: PropTypes.func.isRequired
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameContainer);
