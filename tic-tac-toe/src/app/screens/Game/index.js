@@ -24,24 +24,11 @@ class GameContainer extends Component {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.props.xIsNext ? 'X' : 'O';
-    const state = {
-      history: history.concat([
-        {
-          squares
-        }
-      ]),
-      stepNumber: history.length,
-      xIsNext: !this.props.xIsNext
-    };
 
-    this.props.clickSquare(state);
+    this.props.clickSquare(i);
   };
   jumpTo(step) {
-    this.props.makeMove({
-      stepNumber: step,
-      xIsNext: step % 2 === 0
-    });
+    this.props.makeMove(step);
   }
 
   render() {

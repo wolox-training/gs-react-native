@@ -4,12 +4,12 @@ export const actions = {
 };
 
 export const actionsCreators = {
-  clickSquare: values => ({
+  clickSquare: i => ({
     type: actions.CLICK_SQUARE,
-    payload: { history: values.history, stepNumber: values.stepNumber, xIsNext: values.xIsNext }
+    payload: { i }
   }),
-  makeMove: values => ({
+  makeMove: step => ({
     type: actions.MAKE_MOVE,
-    payload: { stepNumber: values.stepNumber, xIsNext: values.xIsNext }
+    payload: { step }
   })
 };
