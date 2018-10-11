@@ -8,6 +8,16 @@ export default StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: "blue",
-    fontSize: 15
+    fontSize: 15,
+    color: "white"
+  },
+  container: {
+    marginTop: 20,
+    flex: 1
+  },
+  row: {
+    padding: 15,
+    marginBottom: 5,
+    backgroundColor: "skyblue"
   }
 });

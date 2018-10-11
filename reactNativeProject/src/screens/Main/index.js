@@ -9,7 +9,7 @@ import Input from "./components/Input";
 import styles from "./styles";
 import TodoList from "./components/TodoList";
 import { createBottomTabNavigator } from "react-navigation";
-import ScreenOne from "../ScreenOne";
+import RootStack from "../ScreenOne";
 import Button from "./components/Button";
 
 const mapStateToProps = store => ({
@@ -47,7 +47,7 @@ AppContainer.propTypes = {
 
 const Tn = createBottomTabNavigator({
   Home: AppContainer,
-  NextScreen: ScreenOne
+  NextScreen: RootStack
 });
 
 export default connect(
