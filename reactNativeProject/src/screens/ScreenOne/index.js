@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Text, FlatList, ScrollView } from "react-native";
+import { View, Text, FlatList, ScrollView, Image } from "react-native";
 import styles from "./styles";
-import { createStackNavigator } from "react-navigation";
-import DetailsBooks from "../DetailsBooks";
 
 const rows = [
   {
@@ -94,18 +92,34 @@ const extractKey = ({ id }) => id;
 
 class ScreenOne extends Component {
   renderItem = ({ item }) => {
-    return (
-      <Text
-        style={styles.row}
-        onPress={() =>
-          this.props.navigation.navigate("Image", {
-            img: item.image_url
-          })
-        }
-      >
-        {item.title}
-      </Text>
-    );
+    const img = item.image_url;
+
+    if (img === null) {
+      return (
+        <View style={styles.container}>
+          <View style={styles.circle} />
+          <View>
+            <Text style={styles.row}>{item.title}</Text>
+            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+          </View>
+        </View>
+      );
+    } else {
+      return (
+        <View style={styles.container}>
+          <Image
+            source={{
+              uri: img
+            }}
+            style={{ width: 40, height: 40 }}
+          />
+          <View>
+            <Text>{item.title}</Text>
+            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+          </View>
+        </View>
+      );
+    }
   };
 
   render() {
@@ -123,13 +137,4 @@ class ScreenOne extends Component {
   }
 }
 
-const RootStack = createStackNavigator(
-  {
-    Home: ScreenOne,
-    Details: DetailsBooks
-  },
-  {
-    initialRouteName: "Home"
-  }
-);
-export default RootStack;
+export default ScreenOne;

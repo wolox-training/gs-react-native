@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   screen: {
     padding: 20,
-    height: 1,
+
     backgroundColor: "blue",
     borderRadius: 10,
     borderWidth: 1,
@@ -11,13 +11,17 @@ export default StyleSheet.create({
     fontSize: 15,
     color: "white"
   },
+
   container: {
-    marginTop: 20,
-    flex: 1
-  },
-  row: {
-    padding: 15,
+    padding: 10,
     marginBottom: 5,
+    flexDirection: "row",
     backgroundColor: "skyblue"
+  },
+  circle: {
+    width: 30,
+    height: 30,
+    borderRadius: 100 / 2,
+    backgroundColor: "grey"
   }
 });
