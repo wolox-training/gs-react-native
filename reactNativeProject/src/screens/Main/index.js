@@ -8,6 +8,9 @@ import Title from "./components/Title";
 import Input from "./components/Input";
 import styles from "./styles";
 import TodoList from "./components/TodoList";
+import { createBottomTabNavigator } from "react-navigation";
+import ScreenOne from "../ScreenOne";
+import Button from "./components/Button";
 
 const mapStateToProps = store => ({
   items: store.item.items
@@ -26,6 +29,12 @@ class AppContainer extends Component {
         <Title />
         <Input placeholder={"Enter an item!"} onSubmit={this.props.addItem} />
         <TodoList listitems={items} />
+        <Button
+          onPress={() => this.props.navigation.navigate("NextScreen")}
+          title="Learn More"
+          color="white"
+          accessibilityLabel="Learn more about this purple button"
+        />
       </View>
     );
   }
@@ -36,7 +45,12 @@ AppContainer.propTypes = {
   addItem: PropTypes.func.isRequired
 };
 
+const Tn = createBottomTabNavigator({
+  Home: AppContainer,
+  NextScreen: ScreenOne
+});
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AppContainer);
+)(Tn);
