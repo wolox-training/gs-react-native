@@ -3,7 +3,7 @@ import { View, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import styles from "./styles";
 
-const check = function Checkbox(props) {
+function Checkbox(props) {
   const { onToggle, isChecked } = props;
 
   return (
@@ -13,11 +13,11 @@ const check = function Checkbox(props) {
       </View>
     </TouchableOpacity>
   );
-};
+}
 
 check.propTypes = {
   onToggle: PropTypes.func,
   isChecked: PropTypes.bool
 };
 
-export default check;
+export default Checkbox;
