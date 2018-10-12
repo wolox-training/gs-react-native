@@ -7,7 +7,7 @@ import { actionCreators } from "../../redux/item/actions";
 import Title from "./components/Title";
 import Input from "./components/Input";
 import styles from "./styles";
-import TodoList from "./components/TodoList/layout";
+import TodoList from "./components/TodoList";
 
 const mapDispatchToProps = dispatch => ({
   addItem: ({ toDo }) => dispatch(actionCreators.addItem(toDo))
@@ -28,7 +28,6 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-  items: PropTypes.array.isRequired,
   addItem: PropTypes.func.isRequired
 };
 

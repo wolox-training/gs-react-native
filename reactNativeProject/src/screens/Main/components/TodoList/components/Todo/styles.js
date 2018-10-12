@@ -8,7 +8,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderBottomColor: colors.colorWhiteSmoke
+    borderBottomColor: colors.WhiteSmoke
   },
   rightSection: {
     flexDirection: "row",
@@ -17,10 +17,10 @@ export default StyleSheet.create({
   remove: {
     marginLeft: 10,
     marginBottom: 2,
-    color: colors.colorIndianRed,
+    color: colors.IndianRed,
     fontSize: 26
   },
   completed: {
-    backgroundColor: colors.colorWhiteSmoke
+    backgroundColor: colors.WhiteSmoke
   }
 });

@@ -1,6 +1,6 @@
 export default (object = {
-  colorLightBlue: "#33CCFF",
-  colorWhiteSmoke: "#F5F5F5",
-  colorIndianRed: "#CD5C5C",
-  colorBlack: "#000"
+  LightBlue: "#33CCFF",
+  WhiteSmoke: "#F5F5F5",
+  IndianRed: "#CD5C5C",
+  Black: "#000"
 });

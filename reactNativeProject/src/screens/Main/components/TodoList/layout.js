@@ -2,36 +2,34 @@ import React, { Component } from "react";
 import { FlatList } from "react-native";
 
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+
 import Todo from "./components/Todo";
-import { actionCreators } from "../../../../redux/item/actions";
 
-const mapDispatchToProps = dispatch => ({
-  onRemoveItem: index => {
-    dispatch(actionCreators.onRemoveItem(index));
-  },
+// const mapDispatchToProps = dispatch => ({
+//   onRemoveItem: index => {
+//     dispatch(actionCreators.onRemoveItem(index));
+//   },
 
-  onToggleItemCompleted: index =>
-    dispatch(actionCreators.onToggleItemCompleted(index))
-});
+//   onToggleItemCompleted: index =>
+//     dispatch(actionCreators.onToggleItemCompleted(index))
+// });
 
-const mapStateToProps = store => ({
-  items: store.item.items
-});
+// const mapStateToProps = store => ({
+//   items: store.item.items
+// });
 
 class TodoList extends Component {
   render() {
-    const items = this.props.items;
+    const { items, onRemoveItem, onToggleItemCompleted } = this.props;
     return (
       <FlatList
         data={items}
         renderItem={({ item, index }) => (
           <Todo
+            key={index}
             item={item}
-            onToggleItemCompleted={() =>
-              this.props.onToggleItemCompleted(index)
-            }
-            onRemoveItem={() => this.props.onRemoveItem(index)}
+            onToggleItemCompleted={() => onToggleItemCompleted(index)}
+            onRemoveItem={() => onRemoveItem(index)}
           />
         )}
       />
@@ -40,13 +38,12 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-  data: PropTypes.array,
-  renderItem: PropTypes.func,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({ label: PropTypes.string, completed: PropTypes.bool })
+  ).isRequired,
+
   onRemoveItem: PropTypes.func.isRequired,
   onToggleItemCompleted: PropTypes.func.isRequired
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList);
+export default TodoList;
