@@ -1,33 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 import { FlatList } from "react-native";
-import { reduxForm } from "redux-form";
-import PropTypes from "prop-types";
-import FORM_NAME from "./fields";
-import Todo from "./components/Todo";
 
-function TodoList({ items, onToggleItemCompleted, onRemoveItem }) {
-  return (
-    <FlatList
-      data={items}
-      renderItem={({ item, index }) => (
-        <Todo
-          item={item}
-          onToggleItemCompleted={() => onToggleItemCompleted(index)}
-          onRemoveItem={() => onRemoveItem(index)}
-        />
-      )}
-    />
-  );
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Todo from "./components/Todo";
+import { actionCreators } from "../../../../redux/item/actions";
+
+const mapDispatchToProps = dispatch => ({
+  onRemoveItem: index => {
+    dispatch(actionCreators.onRemoveItem(index));
+  },
+
+  onToggleItemCompleted: index =>
+    dispatch(actionCreators.onToggleItemCompleted(index))
+});
+
+const mapStateToProps = store => ({
+  items: store.item.items
+});
+
+class TodoList extends Component {
+  render() {
+    const items = this.props.items;
+    return (
+      <FlatList
+        data={items}
+        renderItem={({ item, index }) => (
+          <Todo
+            item={item}
+            onToggleItemCompleted={() =>
+              this.props.onToggleItemCompleted(index)
+            }
+            onRemoveItem={() => this.props.onRemoveItem(index)}
+          />
+        )}
+      />
+    );
+  }
 }
 
 TodoList.propTypes = {
   data: PropTypes.array,
   renderItem: PropTypes.func,
-  item: PropTypes.array,
   onRemoveItem: PropTypes.func.isRequired,
   onToggleItemCompleted: PropTypes.func.isRequired
 };
 
-export default reduxForm({
-  form: FORM_NAME
-})(TodoList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

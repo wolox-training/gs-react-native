@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View } from "react-native";
+import styles from "./styles";
 
 export default class Footer extends Component {
   render() {
@@ -10,17 +11,3 @@ export default class Footer extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    alignItems: "center",
-    backgroundColor: "#33CCFF",
-    width: 300
-  },
-  text: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  }
-});

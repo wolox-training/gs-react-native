@@ -7,7 +7,7 @@ import { actionCreators } from "../../redux/item/actions";
 import Title from "./components/Title";
 import Input from "./components/Input";
 import styles from "./styles";
-import TodoList from "./components/TodoList";
+import TodoList from "./components/TodoList/layout";
 
 const mapStateToProps = store => ({
   items: store.item.items
@@ -24,7 +24,9 @@ class AppContainer extends Component {
     return (
       <View style={styles.container}>
         <Title />
+        <View style={styles.divider} />
         <Input placeholder={"Enter an item!"} onSubmit={this.props.addItem} />
+        <View style={styles.divider} />
         <TodoList listitems={items} />
       </View>
     );
@@ -38,5 +40,6 @@ AppContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
+
   mapDispatchToProps
 )(AppContainer);

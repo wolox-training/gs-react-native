@@ -20,7 +20,7 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };
 
