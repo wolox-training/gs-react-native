@@ -1,10 +1,17 @@
-import AppContainer from "../../screens/Main";
+import { createStackNavigator } from "react-navigation";
 import ScreenOne from "../../screens/ScreenOne";
-import { createBottomTabNavigator } from "react-navigation";
+import DetailsBooks from "../../screens/DetailsBooks";
+import AppContainer from "../../screens/Main";
 
-const Tn = createBottomTabNavigator({
-  Home: AppContainer,
-  NextScreen: ScreenOne
-});
+const Tn = createStackNavigator(
+  {
+    Home: AppContainer,
+    NextScreen: ScreenOne,
+    Details: DetailsBooks
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
 
 export default Tn;

@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  ScrollView,
+  Image,
+  TouchableHighlight,
+  Button
+} from "react-native";
 import styles from "./styles";
 
 const rows = [
@@ -91,32 +99,56 @@ const rows = [
 const extractKey = ({ id }) => id;
 
 class ScreenOne extends Component {
+  static navigationOptions = {
+    title: "List of Books"
+  };
   renderItem = ({ item }) => {
     const img = item.image_url;
+    const { navigation } = this.props;
 
     if (img === null) {
       return (
         <View style={styles.container}>
-          <View style={styles.circle} />
-          <View>
-            <Text style={styles.row}>{item.title}</Text>
-            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-          </View>
+          <TouchableHighlight
+            onPress={() =>
+              navigation.push("Details", {
+                itemId: 86
+              })
+            }
+          >
+            <View>
+              {<View style={styles.circle} />}
+              <View>
+                <Text style={styles.row}>{item.title}</Text>
+                <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+              </View>
+            </View>
+          </TouchableHighlight>
         </View>
       );
     } else {
       return (
         <View style={styles.container}>
-          <Image
-            source={{
-              uri: img
-            }}
-            style={{ width: 40, height: 40 }}
-          />
-          <View>
-            <Text>{item.title}</Text>
-            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-          </View>
+          <TouchableHighlight
+            onPress={() =>
+              navigation.push("Details", {
+                itemId: 86
+              })
+            }
+          >
+            <View>
+              <Image
+                source={{
+                  uri: img
+                }}
+                style={{ width: 40, height: 40 }}
+              />
+              <View>
+                <Text>{item.title}</Text>
+                <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+              </View>
+            </View>
+          </TouchableHighlight>
         </View>
       );
     }
@@ -131,6 +163,14 @@ class ScreenOne extends Component {
           data={rows}
           renderItem={this.renderItem}
           keyExtractor={extractKey}
+        />
+        <Button
+          title="Go to Jane's profile"
+          onPress={() =>
+            this.props.navigation.push("Details", {
+              itemId: 86
+            })
+          }
         />
       </ScrollView>
     );
