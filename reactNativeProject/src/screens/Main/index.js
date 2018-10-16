@@ -8,12 +8,7 @@ import Title from "./components/Title";
 import Input from "./components/Input";
 import styles from "./styles";
 import TodoList from "./components/TodoList";
-
 import Button from "./components/Button";
-
-const mapStateToProps = store => ({
-  items: store.item.items
-});
 
 const mapDispatchToProps = dispatch => ({
   addItem: ({ toDo }) => dispatch(actionCreators.addItem(toDo))
@@ -21,13 +16,14 @@ const mapDispatchToProps = dispatch => ({
 
 class AppContainer extends Component {
   render() {
-    const { items } = this.props;
-
     return (
       <View style={styles.container}>
         <Title />
+        <View style={styles.divider} />
         <Input placeholder={"Enter an item!"} onSubmit={this.props.addItem} />
-        <TodoList listitems={items} />
+
+        <View style={styles.divider} />
+        <TodoList />
         <Button
           onPress={() => this.props.navigation.navigate("NextScreen")}
           title="Learn More"
@@ -40,11 +36,10 @@ class AppContainer extends Component {
 }
 
 AppContainer.propTypes = {
-  items: PropTypes.array.isRequired,
   addItem: PropTypes.func.isRequired
 };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(AppContainer);

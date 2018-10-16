@@ -104,54 +104,37 @@ class ScreenOne extends Component {
   };
   renderItem = ({ item }) => {
     const img = item.image_url;
+
     const { navigation } = this.props;
 
+    let buttonImg;
     if (img === null) {
-      return (
-        <View style={styles.container}>
-          <TouchableHighlight
-            onPress={() =>
-              navigation.push("Details", {
-                itemId: 86
-              })
-            }
-          >
-            <View>
-              {<View style={styles.circle} />}
-              <View>
-                <Text style={styles.row}>{item.title}</Text>
-                <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-              </View>
-            </View>
-          </TouchableHighlight>
-        </View>
-      );
+      buttonImg = <View style={styles.circle} />;
     } else {
-      return (
-        <View style={styles.container}>
-          <TouchableHighlight
-            onPress={() =>
-              navigation.push("Details", {
-                itemId: 86
-              })
-            }
-          >
-            <View>
-              <Image
-                source={{
-                  uri: img
-                }}
-                style={{ width: 40, height: 40 }}
-              />
-              <View>
-                <Text>{item.title}</Text>
-                <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-              </View>
-            </View>
-          </TouchableHighlight>
-        </View>
+      buttonImg = (
+        <Image source={{ uri: img }} style={{ width: 40, height: 40 }} />
       );
     }
+
+    return (
+      <View style={styles.container}>
+        {buttonImg}
+        <TouchableHighlight
+          onPress={() =>
+            navigation.push("Details", {
+              author: item.author,
+              title: item.title,
+              genre: item.genre
+            })
+          }
+        >
+          <View>
+            <Text>{item.title}</Text>
+            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+          </View>
+        </TouchableHighlight>
+      </View>
+    );
   };
 
   render() {
@@ -163,14 +146,6 @@ class ScreenOne extends Component {
           data={rows}
           renderItem={this.renderItem}
           keyExtractor={extractKey}
-        />
-        <Button
-          title="Go to Jane's profile"
-          onPress={() =>
-            this.props.navigation.push("Details", {
-              itemId: 86
-            })
-          }
         />
       </ScrollView>
     );
