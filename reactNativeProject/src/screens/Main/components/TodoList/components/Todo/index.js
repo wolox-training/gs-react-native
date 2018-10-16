@@ -4,8 +4,7 @@ import PropTypes from "prop-types";
 import Checkbox from "../checkbox";
 import styles from "./styles";
 
-function Todo(props) {
-  const { item, onToggleItemCompleted, onRemoveItem } = props;
+function Todo({ item, onToggleItemCompleted, onRemoveItem }) {
   const itemStyle = item.completed
     ? [styles.item, styles.completed]
     : styles.item;
