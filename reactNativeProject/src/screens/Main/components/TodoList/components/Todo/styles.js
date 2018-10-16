@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../../../../constants/colors";
 
 export default StyleSheet.create({
   item: {
@@ -7,7 +8,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderBottomColor: "whitesmoke"
+    borderBottomColor: colors.WhiteSmoke
   },
   rightSection: {
     flexDirection: "row",
@@ -16,10 +17,10 @@ export default StyleSheet.create({
   remove: {
     marginLeft: 10,
     marginBottom: 2,
-    color: "#CD5C5C",
+    color: colors.IndianRed,
     fontSize: 26
   },
   completed: {
-    backgroundColor: "whitesmoke"
+    backgroundColor: colors.WhiteSmoke
   }
 });

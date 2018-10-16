@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet } from "react-native";
+
 import { reduxForm, Field } from "redux-form";
 import PropTypes from "prop-types";
 import { FORM_NAME, FIELDS } from "./fields";
@@ -20,7 +20,7 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 };
 
