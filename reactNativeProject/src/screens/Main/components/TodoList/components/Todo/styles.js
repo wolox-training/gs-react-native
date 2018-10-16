@@ -8,7 +8,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderBottomWidth: 1,
-    borderBottomColor: colors.WhiteSmoke
+    borderBottomColor: colors.whiteSmoke
   },
   rightSection: {
     flexDirection: "row",
@@ -21,6 +21,6 @@ export default StyleSheet.create({
     fontSize: 26
   },
   completed: {
-    backgroundColor: colors.WhiteSmoke
+    backgroundColor: colors.whiteSmoke
   }
 });
