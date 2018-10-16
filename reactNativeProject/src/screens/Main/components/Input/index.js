@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet } from "react-native";
+
 import { reduxForm, Field } from "redux-form";
 import PropTypes from "prop-types";
 import { FORM_NAME, FIELDS } from "./fields";

@@ -15,7 +15,7 @@ function Checkbox(props) {
   );
 }
 
-check.propTypes = {
+Checkbox.propTypes = {
   onToggle: PropTypes.func,
   isChecked: PropTypes.bool
 };

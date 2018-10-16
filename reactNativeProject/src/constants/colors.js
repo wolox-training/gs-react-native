@@ -1,6 +1,6 @@
-export default (object = {
-  LightBlue: "#33CCFF",
-  WhiteSmoke: "#F5F5F5",
-  IndianRed: "#CD5C5C",
-  Black: "#000"
-});
+export default {
+  lightBlue: "#33CCFF",
+  whiteSmoke: "#F5F5F5",
+  indianRed: "#CD5C5C",
+  black: "#000"
+};

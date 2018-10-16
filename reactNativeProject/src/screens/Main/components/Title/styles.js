@@ -5,7 +5,7 @@ export default StyleSheet.create({
   container: {
     padding: 15,
     alignItems: "center",
-    backgroundColor: colors.LightBlue,
+    backgroundColor: colors.lightBlue,
     width: 300
   },
   text: {
