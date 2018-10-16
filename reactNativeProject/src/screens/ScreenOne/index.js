@@ -93,33 +93,24 @@ const extractKey = ({ id }) => id;
 class ScreenOne extends Component {
   renderItem = ({ item }) => {
     const img = item.image_url;
-
+    let buttonImg;
     if (img === null) {
-      return (
-        <View style={styles.container}>
-          <View style={styles.circle} />
-          <View>
-            <Text style={styles.row}>{item.title}</Text>
-            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-          </View>
-        </View>
-      );
+      buttonImg = <View style={styles.circle} />;
     } else {
-      return (
-        <View style={styles.container}>
-          <Image
-            source={{
-              uri: img
-            }}
-            style={{ width: 40, height: 40 }}
-          />
-          <View>
-            <Text>{item.title}</Text>
-            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-          </View>
-        </View>
+      buttonImg = (
+        <Image source={{ uri: img }} style={{ width: 40, height: 40 }} />
       );
     }
+
+    return (
+      <View style={styles.container}>
+        {buttonImg}
+        <View>
+          <Text>{item.title}</Text>
+          <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
+        </View>
+      </View>
+    );
   };
 
   render() {
