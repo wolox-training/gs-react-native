@@ -17,7 +17,7 @@ export default StyleSheet.create({
   remove: {
     marginLeft: 10,
     marginBottom: 2,
-    color: colors.IndianRed,
+    color: colors.indianRed,
     fontSize: 26
   },
   completed: {
