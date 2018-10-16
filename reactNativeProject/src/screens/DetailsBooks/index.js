@@ -14,7 +14,7 @@ export default class DeatailsBooks extends Component {
     const genre = this.props.navigation.getParam("genre", "NO-genre");
 
     return (
-      <View style={styles.circle}>
+      <View style={styles.container}>
         <Text>{author}</Text>
         <Text>{title}</Text>
         <Text>{genre}</Text>
