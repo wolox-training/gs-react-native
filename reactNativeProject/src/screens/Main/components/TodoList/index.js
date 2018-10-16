@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import { actionCreators } from "../../../../redux/item/actions";
 
 const mapDispatchToProps = dispatch => ({
-  onRemoveItem: index => {
-    dispatch(actionCreators.onRemoveItem(index));
-  },
+  onRemoveItem: index => dispatch(actionCreators.onRemoveItem(index)),
 
   onToggleItemCompleted: index =>
     dispatch(actionCreators.onToggleItemCompleted(index))
