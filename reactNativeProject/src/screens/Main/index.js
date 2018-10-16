@@ -9,12 +9,12 @@ import Input from "./components/Input";
 import styles from "./styles";
 import TodoList from "./components/TodoList";
 
-function AppContainer(props) {
+function AppContainer({ addItem }) {
   return (
     <View style={styles.container}>
       <Title />
       <View style={styles.divider} />
-      <Input placeholder={"Enter an item!"} onSubmit={props.addItem} />
+      <Input placeholder={"Enter an item!"} onSubmit={addItem} />
       <View style={styles.divider} />
       <TodoList />
     </View>
