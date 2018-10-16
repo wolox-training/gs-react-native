@@ -8,6 +8,6 @@ export default StyleSheet.create({
   divider: {
     paddingBottom: 10,
     height: 2,
-    backgroundColor: colors.WhiteSmoke
+    backgroundColor: colors.whiteSmoke
   }
 });
