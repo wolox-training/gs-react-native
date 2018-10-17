@@ -1,18 +1,19 @@
-import AppContainer from "../../screens/Main";
-import ScreenOne from "../../screens/ScreenOne";
 import { TabNavigator, StackNavigator } from "react-navigation";
 
-const CreateTabNavigator = TabNavigator({
-  Home: AppContainer,
-  NextScreen: ScreenOne
-});
+import * as routes from "../../constants/routes";
+import Main from "../../screens/Main";
+import ScreenOne from "../../screens/ScreenOne";
 
-const CreateStackNavigator = StackNavigator({
+const stackNavigator = StackNavigator({
   Home: {
-    screen: CreateTabNavigator,
+    screen: TabNavigator({
+      [routes.Home]: Main,
+      [routes.ScreenOne]: ScreenOne
+    }),
+
     navigationOptions: ({ navigation }) => ({
       title: "Aplicacion en RN"
     })
   }
 });
-export default CreateStackNavigator;
+export default stackNavigator;

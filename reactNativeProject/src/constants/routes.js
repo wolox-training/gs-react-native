@@ -1,4 +1,2 @@
-export default {
-  appContainer: "Home",
-  screenOne: "NextScreen"
-};
+exports.Home = "AppContainer";
+exports.NextScreen = "ScreensOne";
