@@ -5,18 +5,15 @@ import PropTypes from "prop-types";
 import { FORM_NAME, FIELDS } from "./fields";
 import CustomInput from "../../../../components/CustomInput";
 
-class Input extends Component {
-  render() {
-    const { placeholder, handleSubmit } = this.props;
-    return (
-      <Field
-        name={FIELDS.toDo}
-        component={CustomInput}
-        onSubmitEditing={handleSubmit}
-        placeholder={placeholder}
-      />
-    );
-  }
+function Input({ placeholder, handleSubmit }) {
+  return (
+    <Field
+      name={FIELDS.toDo}
+      component={CustomInput}
+      onSubmitEditing={handleSubmit}
+      placeholder={placeholder}
+    />
+  );
 }
 
 Input.propTypes = {

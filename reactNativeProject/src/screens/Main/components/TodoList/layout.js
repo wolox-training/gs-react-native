@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 
 import Todo from "./components/Todo";
 
-function TodoList(props) {
-  const { items, onRemoveItem, onToggleItemCompleted } = props;
+function TodoList({ items, onRemoveItem, onToggleItemCompleted }) {
   return (
     <FlatList
       data={items}

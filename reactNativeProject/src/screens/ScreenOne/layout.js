@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { View, Text, FlatList, ScrollView, Image } from "react-native";
+import React from "react";
+import { Text, FlatList, ScrollView } from "react-native";
 import styles from "./styles";
+import Item from "../Main/components/Item";
 
 const rows = [
   {
@@ -90,42 +91,20 @@ const rows = [
 
 const extractKey = ({ id }) => id;
 
-class ScreenOne extends Component {
-  renderItem = ({ item }) => {
-    const img = item.image_url;
-    let buttonImg;
-    if (img === null) {
-      buttonImg = <View style={styles.circle} />;
-    } else {
-      buttonImg = (
-        <Image source={{ uri: img }} style={{ width: 40, height: 40 }} />
-      );
-    }
-
-    return (
-      <View style={styles.container}>
-        {buttonImg}
-        <View>
-          <Text>{item.title}</Text>
-          <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-        </View>
-      </View>
-    );
-  };
-
-  render() {
-    return (
-      <ScrollView>
-        <Text style={styles.screen}>Screen One</Text>
-        <FlatList
-          styles={styles.container}
-          data={rows}
-          renderItem={this.renderItem}
-          keyExtractor={extractKey}
-        />
-      </ScrollView>
-    );
-  }
+function ScreenOne() {
+  return (
+    <ScrollView>
+      <Text style={styles.container}>Screen One</Text>
+      <FlatList
+        styles={styles.list}
+        data={rows}
+        renderItem={({ item }) => (
+          <Item Img={item.image_url} title={item.title} author={item.author} />
+        )}
+        keyExtractor={extractKey}
+      />
+    </ScrollView>
+  );
 }
 
 export default ScreenOne;
