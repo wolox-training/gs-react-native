@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  screen: {
+  container: {
     padding: 20,
-    height: 1,
     backgroundColor: "blue",
     borderRadius: 10,
     borderWidth: 1,

@@ -9,5 +9,11 @@ export default StyleSheet.create({
     paddingBottom: 10,
     height: 2,
     backgroundColor: colors.whiteSmoke
+  },
+  button: {
+    backgroundColor: colors.red,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.red
   }
 });

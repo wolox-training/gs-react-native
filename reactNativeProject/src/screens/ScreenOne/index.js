@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Text } from "react-native";
 import styles from "./styles";
 
-export default class ScreenOne extends Component {
-  render() {
-    return <Text style={styles.screen}>Screen One</Text>;
-  }
+function ScreenOne() {
+  return <Text style={styles.container}>Screen One</Text>;
 }
+
+export default ScreenOne;
