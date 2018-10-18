@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { View } from "react-native";
-
 import { connect } from "react-redux";
 import { actionCreators } from "../../redux/item/actions";
 import Title from "./components/Title";
