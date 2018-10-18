@@ -1,27 +1,22 @@
 import { StyleSheet } from "react-native";
+import colors from "../../constants/colors";
 
 export default StyleSheet.create({
-  screen: {
+  container: {
     padding: 20,
 
-    backgroundColor: "blue",
+    backgroundColor: colors.blue,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: "blue",
+    borderColor: colors.blue,
     fontSize: 15,
-    color: "white"
+    color: colors.white
   },
 
-  container: {
+  list: {
     padding: 10,
     marginBottom: 5,
     flexDirection: "row",
-    backgroundColor: "skyblue"
-  },
-  circle: {
-    width: 30,
-    height: 30,
-    borderRadius: 100 / 2,
-    backgroundColor: "grey"
+    backgroundColor: colors.skyBlue
   }
 });

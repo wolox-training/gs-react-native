@@ -1,15 +1,3 @@
-import React, { Component } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  ScrollView,
-  Image,
-  TouchableHighlight,
-  Button
-} from "react-native";
-import styles from "./styles";
-
 const rows = [
   {
     id: 1,
@@ -96,60 +84,4 @@ const rows = [
   }
 ];
 
-const extractKey = ({ id }) => id;
-
-class ScreenOne extends Component {
-  static navigationOptions = {
-    title: "List of Books"
-  };
-  renderItem = ({ item }) => {
-    const img = item.image_url;
-
-    const { navigation } = this.props;
-
-    let buttonImg;
-    if (img === null) {
-      buttonImg = <View style={styles.circle} />;
-    } else {
-      buttonImg = (
-        <Image source={{ uri: img }} style={{ width: 40, height: 40 }} />
-      );
-    }
-
-    return (
-      <View style={styles.container}>
-        {buttonImg}
-        <TouchableHighlight
-          onPress={() =>
-            navigation.push("Details", {
-              author: item.author,
-              title: item.title,
-              genre: item.genre
-            })
-          }
-        >
-          <View>
-            <Text>{item.title}</Text>
-            <Text style={{ fontWeight: "bold" }}>{item.author}</Text>
-          </View>
-        </TouchableHighlight>
-      </View>
-    );
-  };
-
-  render() {
-    return (
-      <ScrollView>
-        <Text style={styles.screen}>Screen One</Text>
-        <FlatList
-          styles={styles.container}
-          data={rows}
-          renderItem={this.renderItem}
-          keyExtractor={extractKey}
-        />
-      </ScrollView>
-    );
-  }
-}
-
-export default ScreenOne;
+export default rows;

@@ -1,43 +1,32 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { View } from "react-native";
-
 import { connect } from "react-redux";
 import { actionCreators } from "../../redux/item/actions";
 import Title from "./components/Title";
 import Input from "./components/Input";
 import styles from "./styles";
 import TodoList from "./components/TodoList";
-import Button from "./components/Button";
 
-const mapDispatchToProps = dispatch => ({
-  addItem: ({ toDo }) => dispatch(actionCreators.addItem(toDo))
-});
-
-class AppContainer extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Title />
-        <View style={styles.divider} />
-        <Input placeholder={"Enter an item!"} onSubmit={this.props.addItem} />
-
-        <View style={styles.divider} />
-        <TodoList />
-        <Button
-          onPress={() => this.props.navigation.navigate("NextScreen")}
-          title="Learn More"
-          color="white"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      </View>
-    );
-  }
+function AppContainer({ addItem }) {
+  return (
+    <View style={styles.container}>
+      <Title />
+      <View style={styles.divider} />
+      <Input placeholder={"Enter an item!"} onSubmit={addItem} />
+      <View style={styles.divider} />
+      <TodoList />
+    </View>
+  );
 }
 
 AppContainer.propTypes = {
   addItem: PropTypes.func.isRequired
 };
+
+const mapDispatchToProps = dispatch => ({
+  addItem: ({ toDo }) => dispatch(actionCreators.addItem(toDo))
+});
 
 export default connect(
   null,
