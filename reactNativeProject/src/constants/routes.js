@@ -1,4 +1,4 @@
 export default {
-  appContainer: "Home",
-  screenOne: "NextScreen"
+  Home: "AppContainer",
+  NextScreen: "ScreensOne"
 };
