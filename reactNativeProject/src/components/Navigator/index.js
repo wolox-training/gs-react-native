@@ -16,9 +16,9 @@ const TabNavigator = createMaterialTopTabNavigator({
 const StackNavigator = createStackNavigator({
   Home: {
     screen: TabNavigator,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: {
       title: "Aplicacion en RN"
-    })
+    }
   }
 });
 export default StackNavigator;
