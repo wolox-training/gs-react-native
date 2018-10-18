@@ -1,8 +1,3 @@
-import React from "react";
-import { Text, FlatList, ScrollView } from "react-native";
-import styles from "./styles";
-import Item from "../Main/components/Item";
-
 const rows = [
   {
     id: 1,
@@ -89,22 +84,4 @@ const rows = [
   }
 ];
 
-const extractKey = ({ id }) => id;
-
-function ScreenOne() {
-  return (
-    <ScrollView>
-      <Text style={styles.container}>Screen One</Text>
-      <FlatList
-        styles={styles.list}
-        data={rows}
-        renderItem={({ item }) => (
-          <Item Img={item.image_url} title={item.title} author={item.author} />
-        )}
-        keyExtractor={extractKey}
-      />
-    </ScrollView>
-  );
-}
-
-export default ScreenOne;
+export default rows;
