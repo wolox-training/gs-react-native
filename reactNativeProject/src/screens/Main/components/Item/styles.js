@@ -1,12 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../constants/colors";
 
-const variables = {
-  imageRadio: 32,
-  circleGreyRadio: 100,
-  circleWidth: 30,
-  circleHeight: 30
-};
+const measureCricle = 30;
 
 export default StyleSheet.create({
   list: {
@@ -16,15 +11,15 @@ export default StyleSheet.create({
     backgroundColor: colors.skyBlue
   },
   circle: {
-    width: variables.circleWidth,
-    height: variables.circleHeight,
-    borderRadius: variables.circleGreyRadio / 2,
+    width: measureCricle,
+    height: measureCricle,
+    borderRadius: measureCricle / 2,
     backgroundColor: colors.grey
   },
   image: {
-    height: variables.imageRadio,
-    width: variables.imageRadio,
-    borderRadius: variables.imageRadio / 2
+    height: measureCricle,
+    width: measureCricle,
+    borderRadius: measureCricle / 2
   },
   author: {
     fontWeight: "bold"

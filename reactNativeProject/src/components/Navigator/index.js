@@ -10,7 +10,7 @@ import Main from "../../screens/Main";
 
 const TabNavigator = createMaterialTopTabNavigator({
   [routes.Home]: Main,
-  [routes.NextScreen]: ListOfBooks
+  [routes.ListOfBooks]: ListOfBooks
 });
 
 const StackNavigator = createStackNavigator({
