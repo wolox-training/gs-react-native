@@ -4,5 +4,8 @@ export default {
   indianRed: "#CD5C5C",
   black: "#000",
   red: "#FE2E2E",
-  white: "#FFF"
+  white: "#FFF",
+  skyBlue: "#7EC0EE",
+  blue: "#0000FF",
+  grey: "#808080"
 };

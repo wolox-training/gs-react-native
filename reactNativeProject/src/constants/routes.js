@@ -1,4 +1,4 @@
 export default {
   Home: "AppContainer",
-  NextScreen: "ScreensOne"
+  ListOfBooks: "ListOfBooks"
 };
