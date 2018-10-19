@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../constants/colors";
-import variables from "../../../../constants/variables";
+
+const circleDiameter = 30;
 
 export default StyleSheet.create({
   list: {
@@ -10,15 +11,15 @@ export default StyleSheet.create({
     backgroundColor: colors.skyBlue
   },
   circle: {
-    width: 30,
-    height: 30,
-    borderRadius: variables.circleGreyRadio / 2,
+    width: circleDiameter,
+    height: circleDiameter,
+    borderRadius: circleDiameter / 2,
     backgroundColor: colors.grey
   },
   image: {
-    height: variables.imageRadio,
-    width: variables.imageRadio,
-    borderRadius: variables.imageRadio / 2
+    height: circleDiameter,
+    width: circleDiameter,
+    borderRadius: circleDiameter / 2
   },
   author: {
     fontWeight: "bold"

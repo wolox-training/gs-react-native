@@ -5,13 +5,13 @@ import {
 
 import routes from "../../constants/routes";
 
-import ScreenOne from "../../screens/ListOfBooks";
+import ListOfBooks from "../../screens/ListOfBooks";
 import Main from "../../screens/Main";
 import DetailsBooks from "../../screens/DetailsBooks";
 
 const TabNavigator = createMaterialTopTabNavigator({
   [routes.Home]: Main,
-  [routes.NextScreen]: ScreenOne
+  [routes.ListOfBooks]: ListOfBooks
 });
 
 const StackNavigator = createStackNavigator({

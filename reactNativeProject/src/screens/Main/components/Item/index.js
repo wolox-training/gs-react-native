@@ -4,12 +4,11 @@ import styles from "./styles";
 import PropTypes from "prop-types";
 
 function Item({ img, title, author, genre, navigation }) {
-  const image =
-    img === null ? (
-      <View style={styles.circle} />
-    ) : (
-      <Image source={{ uri: img }} style={styles.image} />
-    );
+  const image = img ? (
+    <Image source={{ uri: img }} style={styles.image} />
+  ) : (
+    <View style={styles.circle} />
+  );
 
   return (
     <View style={styles.list}>
