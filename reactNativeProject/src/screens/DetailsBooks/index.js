@@ -11,9 +11,9 @@ class DeatailsBooks extends Component {
     };
   };
   render() {
-    const author = this.props.navigation.getParam("author", "NO-author");
-    const title = this.props.navigation.getParam("title", "NO-title");
-    const genre = this.props.navigation.getParam("genre", "NO-genre");
+    const author = this.props.navigation.getParam("author");
+    const title = this.props.navigation.getParam("title");
+    const genre = this.props.navigation.getParam("genre");
 
     return (
       <View style={styles.container}>
