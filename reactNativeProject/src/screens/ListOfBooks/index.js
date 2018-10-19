@@ -6,7 +6,7 @@ import books from "../../constants/books";
 
 const extractKey = ({ id }) => id;
 
-function ListOfBooks({ navigation }) {
+function ListOfBooks() {
   return (
     <ScrollView>
       <Text style={styles.container}>Screen One</Text>
@@ -19,7 +19,6 @@ function ListOfBooks({ navigation }) {
             title={item.title}
             author={item.author}
             genre={item.genre}
-            navigation={navigation}
           />
         )}
         keyExtractor={extractKey}

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { View, Text } from "react-native";
+
 import styles from "./styles";
 
-export default class DeatailsBooks extends Component {
+class DeatailsBooks extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: navigation.getParam("title", "NO-title")
+      title: navigation.getParam("title")
     };
   };
   render() {
@@ -22,3 +24,11 @@ export default class DeatailsBooks extends Component {
     );
   }
 }
+
+DeatailsBooks.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired
+  }).isRequired
+};
+
+export default DeatailsBooks;

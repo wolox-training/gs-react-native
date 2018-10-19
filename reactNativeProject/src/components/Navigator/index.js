@@ -21,6 +21,6 @@ const StackNavigator = createStackNavigator({
       title: "Aplicacion en RN"
     }
   },
-  Details: DetailsBooks
+  [routes.Details]: DetailsBooks
 });
 export default StackNavigator;
