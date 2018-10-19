@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../../../constants/colors";
 
-const measureCricle = 30;
+const circleDiameter = 30;
 
 export default StyleSheet.create({
   list: {
@@ -11,15 +11,15 @@ export default StyleSheet.create({
     backgroundColor: colors.skyBlue
   },
   circle: {
-    width: measureCricle,
-    height: measureCricle,
-    borderRadius: measureCricle / 2,
+    width: circleDiameter,
+    height: circleDiameter,
+    borderRadius: circleDiameter / 2,
     backgroundColor: colors.grey
   },
   image: {
-    height: measureCricle,
-    width: measureCricle,
-    borderRadius: measureCricle / 2
+    height: circleDiameter,
+    width: circleDiameter,
+    borderRadius: circleDiameter / 2
   },
   author: {
     fontWeight: "bold"
