@@ -1,4 +1,5 @@
 export default {
   Home: "AppContainer",
-  ListOfBooks: "ListOfBooks"
+  ListOfBooks: "ListOfBooks",
+  Details: "DetailsOfBook"
 };

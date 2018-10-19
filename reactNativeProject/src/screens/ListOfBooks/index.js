@@ -14,7 +14,12 @@ function ListOfBooks() {
         styles={styles.list}
         data={books}
         renderItem={({ item }) => (
-          <Item img={item.image_url} title={item.title} author={item.author} />
+          <Item
+            img={item.image_url}
+            title={item.title}
+            author={item.author}
+            genre={item.genre}
+          />
         )}
         keyExtractor={extractKey}
       />
