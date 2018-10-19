@@ -6,7 +6,7 @@ import books from "../../constants/books";
 
 const extractKey = ({ id }) => id;
 
-function ScreenOne() {
+function ListOfBooks() {
   return (
     <ScrollView>
       <Text style={styles.container}>Screen One</Text>
@@ -22,4 +22,4 @@ function ScreenOne() {
   );
 }
 
-export default ScreenOne;
+export default ListOfBooks;
