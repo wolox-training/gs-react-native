@@ -18,9 +18,9 @@ LoginContainer.propTypes = {
   login: PropTypes.func.isRequired
 };
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = dispatch => ({
   login: values => {
-    actionsCreators.login(values);
+    dispatch(actionsCreators.login(values));
   }
 });
 export default connect(
