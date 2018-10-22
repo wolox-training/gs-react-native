@@ -1,25 +1,41 @@
+import Immutable from 'seamless-immutable';
+import { createReducer, completeState, completeReducer } from 'redux-recompose';
+
 import { actions } from './actions.js';
 
-const initialState = {
+export const stateDescription = {
   email: null,
   token: null
 };
 
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case actions.LOG_IN_USER:
-      return state;
+// const initialState = {
+//   email: null,
+//   token: null
+// };
 
-    case actions.LOG_IN_USER_SUCCESS:
-      return {
-        ...state,
-        email: action.payload.email,
-        token: action.payload.token
-      };
+const initialState = completeState(stateDescription);
 
-    case actions.LOG_IN_USER_FAILED:
-      return state;
-    default:
-      return state;
-  }
-}
+const reducerDescription = {
+  primaryActions: [actions.LOG_IN_USER]
+};
+
+export default createReducer(Immutable(initialState), completeReducer(reducerDescription));
+
+// export default function reducer(state = initialState, action) {
+//   switch (action.type) {
+//     case actions.LOG_IN_USER:
+//       return state;
+
+//     case actions.LOG_IN_USER_SUCCESS:
+//       return {
+//         ...state,
+//         email: action.payload.email,
+//         token: action.payload.token
+//       };
+
+//     case actions.LOG_IN_USER_FAILED:
+//       return state;
+//     default:
+//       return state;
+//   }
+// }
